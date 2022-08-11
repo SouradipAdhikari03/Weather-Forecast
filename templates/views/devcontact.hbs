@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{>header}}
+</head>
+
+<body>
+{{>navbar}}
+  <!-- ====main header======= -->
+  <div class="container">
+    <h1><span>Your Suggestion Matters..</span></h1>
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Name">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Write a Message</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <button type="submit" class="submit">Send Message</button>
+    </form>
+    <div class="social">
+      
+      
+      <!-- ==========contact info item start -->
+      <div class="contact-info-item padd-15">
+        <div class="icon"><i class="fa fa-envelope"></i></div>
+        {{!-- <h4>Email</h4> --}}
+        <p><a href="mailto:souradip.adhikari.03@gmail.com">Mail Me Here</a></p>
+      </div>
+      <!-- ==========contact info item end -->
+      <!-- ==========contact info item start -->
+      <div class="contact-info-item padd-15">
+        <div class="icon"><i class="fa fa-globe-asia"></i></div>
+        {{!-- <h4>Website</h4> --}}
+        <p><a href="https://souradipadhikari.netlify.app/" target="_blank">Visit My Website</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer=== -->
+
+{{>footer}}
+</body>
+
+</html>
