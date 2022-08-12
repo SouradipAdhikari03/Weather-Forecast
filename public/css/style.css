@@ -34,13 +34,13 @@ body {
 .navbar {
     color: solid black;
     background-color: var(--main-bg);
-    padding: 2rem;
-    width: 100%;
+    padding: 1.5rem 0;
+    line-height: 10px;
 }
 
 .navbar a {
     color: black;
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 .navbar li a:hover {
@@ -52,11 +52,22 @@ body {
 }
 
 .navbar-toggler {
-    border-color: black;
+    border-color: rgb(84, 97, 241);
+    background-color:  rgb(64, 38, 234);
 }
+.navbar-toggler-icon .fa-solid{
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 4px;
+    padding-left: 4px;
+    font-size: 1.3rem;
 
+}
 .navbar li {
     margin-left: 20px;
+    margin-top: 10px;
 }
 
 .fa-snowflake {
@@ -259,7 +270,8 @@ footer p {
     padding: 2rem;
     font-size: 1.5rem;
 }
-.additional_layer{
+
+.additional_layer {
     width: 100%;
     height: 40%;
     background-color: rgb(0, 0, 0);
@@ -269,11 +281,13 @@ footer p {
     border-radius: 1rem;
     padding: 1rem;
 }
-.additional_layer p{
+
+.additional_layer p {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-transform: uppercase;
     color: #fff;
 }
+
 .main_layer {
     width: 100%;
     height: 80%;
@@ -421,5 +435,11 @@ sup {
     sup {
         font-size: 2rem;
         margin-top: -10rem;
+    }
+}
+
+@media (max-width:527px){
+    .err{
+        text-align: center;
     }
 }
