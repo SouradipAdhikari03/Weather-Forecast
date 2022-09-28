@@ -2,6 +2,9 @@ const express = require ("express");
 const path =require("path")
 const hbs=require("hbs")
 const app = express();
+require("./db/conn");
+const feedback= require("./db/models/devcontact");
+
 const port= process.env.PORT || 7000;
 
 // public static path
@@ -14,7 +17,8 @@ app.set('views', template_path)
  app.use(express.static(static_path));
 hbs.registerPartials(partials_path);
 
-
+app.use(express.json());
+app.use(express.urlencoded({extended:false}))
 // routing
 app.get("/",(rq,rs)=>{
     rs.render("index");
@@ -29,6 +33,21 @@ app.get("*",(rq,rs)=>{
     rs.render("404error",{
         errorMsg:"Oops! Page Not Found!"
     });
+})
+app.post("/devcontact",async(req,res)=>{
+    try {
+        const weatherFeedback= new feedback({
+         name:req.body.name,
+         email:req.body.email,
+         message:req.body.message
+        })
+        
+        const Registered=await weatherFeedback.save();
+        res.status(201).render("index");
+
+    } catch (error) {
+        res.status(400).send(error)
+    }
 })
 
 app.listen(port,()=>{
